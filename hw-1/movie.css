@@ -3,7 +3,28 @@ body{
 	background-repeat: no-repeat;
     background-size: 100% 100%;
 }
+
+h1{
+	text-align: center;
+	font-weight: bold;
+	font-family: "Times New Roman", Georgia;
+	font-size: 24pt;
+	text-shadow: 3px 3px #999999;
+}
+
+p{
+	font-size: 12pt;
+	font-family: "Helvetica", Arial;
+}
+
+footer{
+	text-align: center;
+	background-color: #A2B964;
+	padding: 0.5em;
+}
+
 #w3c {
 	position: absolute;
 	right: 0px;
 }
+

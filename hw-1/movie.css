@@ -2,6 +2,8 @@ body{
 	background-image: url("images/background.png");
 	background-repeat: no-repeat;
     background-size: 100% 100%;
+	font-size: 12pt;
+	font-family: "Helvetica", Arial, sans-serif;
 }
 
 #glavni{
@@ -30,18 +32,45 @@ h1{
 	text-shadow: 3px 3px #999999;
 }
 
-p{
-	font-size: 12pt;
-	font-family: "Helvetica", Arial, sans-serif;
-}
-
-#baner {
+#baner{
 	background-image: url("images/rbg.png");
 	background-repeat: repeat-x;
 	margin-bottom: 1rem;
 	font-size: 48pt;
 	color: red;
 	font-weight: bold;
+	text-align: left;
+}
+
+.quotebubble{
+	font-size: 13pt;
+	font-family: "Georgia", Times New Roman, serif;
+	background-color: #FFFFFF;
+	width: 80%;
+	margin: auto;
+	border: 2px solid #CCCCCC;
+	border-radius: 12px;
+	padding: 1em;
+}
+
+p{
+	width: 80%;
+	margin: auto;
+	padding: 1em;
+}
+
+.publication{
+		font-size: 13pt;
+		font-style: italic;
+}
+
+dl{
+	font-weight: bold;
+	line-height: 1.5; 
+}
+li {
+	list-style-type: none;
+	text-indent: 0px;
 }
 
 footer{

@@ -7,7 +7,7 @@
 <head>
   <link rel="stylesheet" href="movie.css">
   <title>PIA HW - Movie review</title>
-  <meta name="author" content="ime_studenta!" />
+  <meta name="author" content="Jovan Bogdanović" />
   <meta charset="utf-8" />
   <meta name="description" content="HTML/CSS homework assignment." />
   <meta name="keywords" content="pia, web programming, html, css" />
@@ -15,9 +15,13 @@
 
 <body>
   <h1>WALL-E (2008)</h1>
-
+  <div id="glavni">
+  <div id="kolone">
+  <div id="levo">
+	<div id="baner">
   <img src="images/freshbig.png" alt="Rotten" />
   <span>95%</span>
+    </div>
 
   <p class="quotebubble">
     <img src="images/rotten.gif" alt="Rotten" />
@@ -124,9 +128,10 @@
     Bogdan Jovanović<br />
     <span class="publication">Filmofil</span>
   </p>
-
+	</div>
   <!-- sekcija sa informacijama: desna kolona. -->
-  <img src="images/cover.png" alt="general overview" />
+  <div id="desno">
+  <img src="images/walle.jpg" alt="general overview" width="100%" />
   <dl>
     <dt>STARRING</dt>
     <dd>
@@ -187,13 +192,17 @@
       </ul>
     </dd>
   </dl>
-
+  </div>
+  </div>
   <footer>(1-10) of 88</footer>
+  </div>
+
 
   <div id="w3c">
     <a href="images/validate-html.php"><img src="images/w3c-html.png" alt="Valid HTML5" /></a><br />
     <a href="images/validate-css.php"><img src="images/w3c-css.png" alt="Valid CSS" /></a>
   </div>
+  
 </body>
 
 </html>

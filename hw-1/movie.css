@@ -4,6 +4,24 @@ body{
     background-size: 100% 100%;
 }
 
+#glavni{
+	width: 55%;
+	margin: auto;
+	box-shadow: 5px 5px 5px gray;
+}
+#kolone{
+	display: flex;
+}
+
+#levo{
+	flex: 70%;
+	background-color: #EEEEEE;
+}
+
+#desno{
+	flex: 30%;
+	background-color: #A2B964;
+}
 h1{
 	text-align: center;
 	font-weight: bold;
@@ -15,6 +33,15 @@ h1{
 p{
 	font-size: 12pt;
 	font-family: "Helvetica", Arial, sans-serif;
+}
+
+#baner {
+	background-image: url("images/rbg.png");
+	background-repeat: repeat-x;
+	margin-bottom: 1rem;
+	font-size: 48pt;
+	color: red;
+	font-weight: bold;
 }
 
 footer{

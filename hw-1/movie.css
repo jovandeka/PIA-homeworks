@@ -58,7 +58,7 @@ h1{
 }
 
 p{
-	width: 95%;
+	width: 90%;
 	margin: auto;
 	padding: 1em;
 }
@@ -75,15 +75,18 @@ p{
 
 dt{
 	font-weight: bold;
-	padding: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 dd{
-	margin-bottom: 1.5; 
+	padding-bottom: 15px; 
+	padding-right: 15px;
 }
 
 ul{
 	padding: 0;
+	margin: 0;
 }
 
 li {

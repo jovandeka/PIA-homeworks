@@ -7,11 +7,11 @@ ul {
 	padding: 0;
 	overflow: hidden;
 	background-color: black;
-	opacity: 85%;
+	opacity: 75%;
 }
 
 li {
-	float: left;
+	float: right;
 }
 
 li a {
@@ -24,20 +24,45 @@ li a {
 	text-decoration: none;
 }
 
-li a:hover:not(.active) {
-	background-color: gray;
+li a:hover {
+	background-color: white;
+	color: black;
+	text-decoration: none;
 }
 
-.active {
-	background-color: #862d59;
+.naslov{
+	float: left;
+	color: #99e6ff;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 30px;
+	font-family: "Cursive";
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 40px;
 }
 
 body{
 	background-image: url("slike/pozadina.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 }
 
 .opis{
-	font-family: "Times New Roman", Helvetica;
-	font-size: 13px;
-	padding-top: 40px;
+	font-family: "Cursive";
+	font-size: 20px;
+}
+
+.naslovi{
+	color: #ffb84d;
+	text-align: center;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 40px;
+}
+
+p{
+	text-indent: 30px;
+	font-style: italic;
 }

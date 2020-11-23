@@ -90,12 +90,18 @@ table {
 
 td {
 	text-align: center;
-	padding: 40px;
 }
 
 .pica{
 	width: 30%;
 	padding: 10px;
+}
+
+.opis{
+	width: 40%;
+	font-size: 20px;
+	font-family: "Cursive";
+	padding: 30px;
 }
 
 .fa {

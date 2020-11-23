@@ -49,21 +49,7 @@ body{
 	background-size: 100% 100%;
 }
 
-.opis{
-	font-family: "Cursive";
-	font-size: 20px;
-}
-
-.meni{
-	padding-top: 50px;
-}
-
-.kontakt{
-	padding-top: 50px;
-}
-
 .naslovi{
-	color: #ffb84d;
 	text-align: center;
 	font-weight: bold;
 	font-style: italic;
@@ -73,13 +59,24 @@ body{
 }
 
 p{
-	text-indent: 30px;
 	font-style: italic;
+	font-family: "Cursive";
+	font-size: 20px;
+}
+
+.opis{
+	text-indent: 30px;	
+	color: #996600;
+}
+
+.meni{
+	color: #b37700;
 }
 
 .kontakt{
-	font-family: "Cursive";
-	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+	color: #cc8800;
 }
 
 .fa {

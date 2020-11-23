@@ -64,6 +64,11 @@ p{
 	font-size: 20px;
 }
 
+.horizontala {
+  border: 10px solid orange;
+  border-radius: 70%;
+}
+
 .onama{
 	text-indent: 30px;	
 	color: #996600;

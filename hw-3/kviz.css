@@ -1,0 +1,31 @@
+.ekran{
+    background-image:url("slike/pozadina.jpg");
+    position: relative;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.naslov{
+    font-size: 50pt;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    color: #000000;
+    text-align: center;
+    text-decoration-line: underline;
+    text-decoration-style: double;
+}
+
+.container-fluid{
+    background-color: rgba(163, 108, 5, 0.9);;
+    border: 2px solid #000000; 
+    border-radius: 10%;
+    top:15%;
+    font-size: 18pt;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    padding-top: 50px;
+    vertical-align: middle;
+    min-height: 30%;
+}

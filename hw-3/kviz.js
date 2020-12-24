@@ -70,8 +70,8 @@ function checkAnswer() {
 
     i++;
     if(jsonData.length-1 < i){
-        document.write("<body style='background-color:#348322;'>");
-        document.write("<div style='color:#ffffff;font-size:18pt;text-align:center;'>*****Vas rezultat je: "+tacni+"*****</div>");
+        document.write("<body style='background-color:black;'>");
+        document.write("<div style='color:white;font-size:18pt;text-align:center;'>*****Vas rezultat je: "+tacni+"*****</div>");
         document.write("</body>");
     }
     generate(i);
@@ -81,3 +81,6 @@ var odustani = document.getElementById("prekid");
 odustani.onclick = () => {
     location.reload();
 }
+
+//tajmeri
+//status odgovora

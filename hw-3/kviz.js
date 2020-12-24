@@ -17,6 +17,7 @@ function generate(index) {
     document.getElementById("optt1").innerHTML = jsonData[index].opt1;
     document.getElementById("optt2").innerHTML = jsonData[index].opt2;
     document.getElementById("optt3").innerHTML = jsonData[index].opt3;
+    document.getElementById("optt4").innerHTML = jsonData[index].opt4;
 }
   
 function checkAnswer() {

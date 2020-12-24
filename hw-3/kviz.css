@@ -24,8 +24,9 @@
     text-align-last: center;
     margin: auto;
     position: relative;
-    padding-bottom: 3%;
-    padding-top: 3%;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    width: 90%;
 }
 
 #question{

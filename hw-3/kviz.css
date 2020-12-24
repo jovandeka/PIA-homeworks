@@ -24,7 +24,18 @@
     text-align-last: center;
     margin: auto;
     position: relative;
-    vertical-align: middle;
     padding-bottom: 3%;
-    padding-top: 5%;
+    padding-top: 3%;
+}
+
+#question{
+    font-size: 20pt;
+    text-align-last: center;
+    font-weight: bold;
+}
+
+.poravnaj{
+    font-size: 17pt;
+    text-align-last: left;
+    padding-left: 45%;
 }

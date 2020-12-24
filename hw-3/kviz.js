@@ -1,16 +1,36 @@
 var button = document.getElementById("next");
 pravila.style.display = "none";
+kviz.style.display = "none";
 
-button.onclick = function() {
+button.onclick = function(){
     var div1 = document.getElementById("pocetak");
     var div2 = document.getElementById("pravila");
     var div3 = document.getElementById("kviz");
+
     if (div1.style.display !== "none"){
         div1.style.display = "none";
         div2.style.display = "block";
+        div3.style.display = "none";
     }
     else {
         div1.style.display = "block";
+        
+    }
+};
+
+var button2 = document.getElementById("pocni");
+
+button2.onclick = function(){
+    var div1 = document.getElementById("pocetak");
+    var div2 = document.getElementById("pravila");
+    var div3 = document.getElementById("kviz");
+    if (div2.style.display !== "none"){
+        div1.style.display = "none";
+        div2.style.display = "none";
+        div3.style.display = "block";
+    }
+    else {
+        div2.style.display = "block";
         
     }
 };
@@ -38,16 +58,15 @@ function checkAnswer() {
     if (document.getElementById("opt3").checked && jsonData[i].opt3 == jsonData[i].answer) {
         tacni++;
     }
-    if (document.getElementById("opt4").checked && jsonData[i].opt3 == jsonData[i].answer) {
+    if (document.getElementById("opt4").checked && jsonData[i].opt4 == jsonData[i].answer) {
         tacni++;
     } 
 
     i++;
     if(jsonData.length-1 < i){
         document.write("<body style='background-color:#348322;'>");
-        document.write("<div style='color:#ffffff;font-size:18pt;text-align:center;'>*****Vas rezultat je: "+tacni+"*****</div>");
+        document.write("<div style='color:#ffffff;font-size:18pt;text-align:center;'>***** Vas rezultat je: "+tacni+"*****</div>");
         document.write("</body>");
     }
-
     generate(i);
   }

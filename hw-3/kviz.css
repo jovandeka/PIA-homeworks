@@ -9,10 +9,9 @@
     font-size: 50pt;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bolder;
-    color: #aa1d1dd0;
+    color: rgb(223, 102, 21);
     text-align: center;
-    text-decoration-line: underline;
-    text-decoration-style: double;
+    -webkit-text-stroke: 3px #000000;
 }
 
 .container-fluid{

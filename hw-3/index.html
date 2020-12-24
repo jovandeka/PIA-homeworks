@@ -3,10 +3,10 @@
         <title>
             Kviz
         </title>
-        <meta name="author" content="Jovan Bogdanovic" />
+        <meta name="author" content="Jovan Bogdanović" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="kviz.css" rel="stylesheet">
-        <script defer src="kviz.js"></script>
+        <script src="kviz.js"></script>
         <meta charset="utf-8" />
     </head>
     <body>
@@ -17,15 +17,12 @@
     
             <div class="container-fluid">
                 <div class="main">
-                    <form action="#" class="was-validated"></form>
+                    <form action="#" onsubmit="return unos()">
                         <div class="form-group">
-                            <label for="name"><i>Unesite svoje ime:</i></label>
                             <input type="text" class="form-control" id="name" placeholder="Ime igrača" name="name" required>
-                            <div class="valid-feedback" style="color: rgb(18, 196, 33);">Uspesno ste uneli ime!</div>
-                            <div class="invalid-feedback" style="color: rgb(245, 6, 6);">Niste uneli ime!</div>
-                        </div>
+                        </div></br>
+                        <button type="submit" class="btn btn-primary" id="next">Dalje</button>
                     </form>
-                <button type="submit" class="btn btn-primary" id="next">Počni kviz</button>
                 </div>
             </div>
         </div>

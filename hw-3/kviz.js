@@ -12,7 +12,6 @@ button.onclick = function(){
         div1.style.display = "none";
         div2.style.display = "block";
         div3.style.display = "none";
-        alert("Uspesno ste uneli ime");
         return true;
     }
     else {

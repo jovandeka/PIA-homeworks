@@ -1,11 +1,19 @@
-function unos() {
-    var ime = document.getElementById("name").value;
-  
-    if (ime != null){
-        alert("Uspesno ste uneli ime");
-        return true;
-    } 
-  }
+var button = document.getElementById("next");
+pravila.style.display = "none";
+
+button.onclick = function() {
+    var div1 = document.getElementById("pocetak");
+    var div2 = document.getElementById("pravila");
+    var div3 = document.getElementById("kviz");
+    if (div1.style.display !== "none"){
+        div1.style.display = "none";
+        div2.style.display = "block";
+    }
+    else {
+        div1.style.display = "block";
+        
+    }
+};
 
 var i = 0;
 var tacni = 0 ;

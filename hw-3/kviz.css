@@ -17,15 +17,15 @@
 }
 
 .container-fluid{
-    background-color: rgba(163, 108, 5, 0.9);;
+    background-color: rgba(163, 108, 5, 0.85);;
     border: 2px solid #000000; 
     border-radius: 10%;
     top:15%;
     font-size: 18pt;
-    text-align: center;
+    text-align-last: center;
     margin: auto;
     position: relative;
-    padding-top: 50px;
     vertical-align: middle;
-    min-height: 30%;
+    padding-bottom: 3%;
+    padding-top: 5%;
 }

@@ -6,16 +6,23 @@ button.onclick = function(){
     var div1 = document.getElementById("pocetak");
     var div2 = document.getElementById("pravila");
     var div3 = document.getElementById("kviz");
+    var ime = document.getElementById("name").value;
 
-    if (div1.style.display !== "none"){
+    if (div1.style.display !== "none" && ime !=="" ){
         div1.style.display = "none";
         div2.style.display = "block";
         div3.style.display = "none";
+        alert("Uspesno ste uneli ime");
+        return true;
     }
     else {
         div1.style.display = "block";
-        
+        div2.style.display = "none";
+        div3.style.display = "none";
+        alert("Niste uneli ime!");
+        return false;
     }
+    
 };
 
 var button2 = document.getElementById("pocni");
@@ -65,8 +72,13 @@ function checkAnswer() {
     i++;
     if(jsonData.length-1 < i){
         document.write("<body style='background-color:#348322;'>");
-        document.write("<div style='color:#ffffff;font-size:18pt;text-align:center;'>***** Vas rezultat je: "+tacni+"*****</div>");
+        document.write("<div style='color:#ffffff;font-size:18pt;text-align:center;'>*****Vas rezultat je: "+tacni+"*****</div>");
         document.write("</body>");
     }
     generate(i);
   }
+
+var odustani = document.getElementById("prekid");
+odustani.onclick = () => {
+    location.reload();
+}

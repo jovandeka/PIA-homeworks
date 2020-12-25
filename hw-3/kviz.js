@@ -52,35 +52,54 @@ function generate(index) {
     document.getElementById("optt2").innerHTML = jsonData[index].opt2;
     document.getElementById("optt3").innerHTML = jsonData[index].opt3;
     document.getElementById("optt4").innerHTML = jsonData[index].opt4;
+
+    document.getElementById("optt1").style.color = "black";
+    document.getElementById("optt2").style.color = "black";
+    document.getElementById("optt3").style.color = "black";
+    document.getElementById("optt4").style.color = "black";
 }
-  
-function checkAnswer() {
+
+var dalje = document.getElementById("sledece");
+dalje.onclick = () => {
     if (document.getElementById("opt1").checked && jsonData[i].opt1 == jsonData[i].answer) {
         tacni++;
+        document.getElementById("optt1").style.color = "green";
+    }
+    if (document.getElementById("opt1").checked && jsonData[i].opt1 !== jsonData[i].answer) {
+        document.getElementById("optt1").style.color = "red";
     }
     if (document.getElementById("opt2").checked && jsonData[i].opt2 == jsonData[i].answer) {
         tacni++;
+        document.getElementById("optt2").style.color = "green";
+    }
+    if (document.getElementById("opt2").checked && jsonData[i].opt2 !== jsonData[i].answer) {
+        document.getElementById("optt2").style.color = "red";
     }
     if (document.getElementById("opt3").checked && jsonData[i].opt3 == jsonData[i].answer) {
         tacni++;
+        document.getElementById("optt3").style.color = "green";
+    }
+    if (document.getElementById("opt3").checked && jsonData[i].opt3 !== jsonData[i].answer) {
+        document.getElementById("optt3").style.color = "red";
     }
     if (document.getElementById("opt4").checked && jsonData[i].opt4 == jsonData[i].answer) {
         tacni++;
-    } 
+        document.getElementById("optt4").style.color = "green";
+    }
+    if (document.getElementById("opt4").checked && jsonData[i].opt4 !== jsonData[i].answer) {
+        document.getElementById("optt4").style.color = "red";
+    }
 
     i++;
     if(jsonData.length-1 < i){
         document.write("<body style='background-color:black;'>");
-        document.write("<div style='color:white;font-size:18pt;text-align:center;'>*****Vas rezultat je: "+tacni+"*****</div>");
+        document.write("<div style='color:white;font-size:18pt;text-align:center;'></br></br></br></br></br></br></br></br></br></br></br></br>*****Vas rezultat je: "+tacni+"/10*****</div>");
         document.write("</body>");
     }
-    generate(i);
-  }
+    setTimeout(generate(i), 3000);
+}
 
 var odustani = document.getElementById("prekid");
 odustani.onclick = () => {
     location.reload();
 }
-
-//tajmeri
-//status odgovora

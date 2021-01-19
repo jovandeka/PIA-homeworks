@@ -1,0 +1,16 @@
+body{
+	font: 14px sans-serif; 
+}
+
+.wrapper{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 27%;
+
+}
+
+h2{
+	text-align: center;
+}
+

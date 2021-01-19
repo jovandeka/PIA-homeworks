@@ -95,7 +95,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			$param_prezime = $prezime;
 			$param_email = $email;
             $param_korisnicko_ime = $korisnicko_ime;
-            $param_lozinka = password_hash($lozinka, PASSWORD_DEFAULT);
+            $param_lozinka = $lozinka;
             
             if(mysqli_stmt_execute($stmt)){
                 header("location: login.php");
@@ -144,7 +144,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>    
             <div class="form-group <?php echo (!empty($lozinka_err)) ? 'has-error' : ''; ?>">
                 <label>Lozinka:</label>
-                <input type="lozinka" name="lozinka" class="form-control" value="<?php echo $lozinka; ?>">
+                <input type="password" name="lozinka" class="form-control" value="<?php echo $lozinka; ?>">
                 <span class="help-block"><?php echo $lozinka_err; ?></span>
             </div>
             <div class="form-group">

@@ -2,7 +2,7 @@
 session_start();
 
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: index.php");
+    header("location: imdb.php");
     exit;
 }
 
@@ -52,7 +52,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["id"] = $id;
                             $_SESSION["korisnicko_ime"] = $korisnicko_ime;                            
                             
-                            header("location: index.php");
+                            header("location: imdb.php");
                         } else{
                             $lozinka_err = "Pogrešna lozinka.";
                         }
@@ -88,7 +88,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["id"] = $id;
                             $_SESSION["korisnicko_ime"] = $korisnicko_ime;                            
                             
-                            header("location: index.php");
+                            header("location: imdb.php");
                         } else{
                             $lozinka_err = "Pogrešna lozinka.";
                         }

@@ -13,7 +13,22 @@ body{
 	color: white;
 }
 
+.zaglavlje{
+	display: block;
+	width: 30%;
+	float: right;
+	text-align: right;
+	color: white;
+	font: 25px sans-serif;
+	padding-top: 13px;
+	padding-right: 13px;
+}
+
+.izloguj{
+	float: right;
+	padding-left: 13px;
+}
+
 h2{
 	text-align: center;
 }
-

@@ -122,17 +122,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			<div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
                 <label>Email adresa:</label>
                 <input type="text" name="email" class="form-control" value="<?php echo $email; ?>">
-                <span class="help-block"><?php echo $email_err; ?></span>
+                <span class="help-block"><b><?php echo $email_err; ?></b></span>
             </div>
             <div class="form-group <?php echo (!empty($korisnicko_ime_err)) ? 'has-error' : ''; ?>">
                 <label>Korisničko ime:</label>
                 <input type="text" name="korisnicko_ime" class="form-control" value="<?php echo $korisnicko_ime; ?>">
-                <span class="help-block"><?php echo $korisnicko_ime_err; ?></span>
+                <span class="help-block"><b><?php echo $korisnicko_ime_err; ?></b></span>
             </div>    
             <div class="form-group <?php echo (!empty($lozinka_err)) ? 'has-error' : ''; ?>">
                 <label>Lozinka:</label>
                 <input type="password" name="lozinka" class="form-control">
-                <span class="help-block"><?php echo $lozinka_err; ?></span>
+                <span class="help-block"><b><?php echo $lozinka_err; ?></b></span>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">

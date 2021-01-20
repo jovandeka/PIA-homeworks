@@ -16,11 +16,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <link href="imdb.css" rel="stylesheet">
 </head>
 <body>
-    <div class="page-header">
-        <h1>Zdravo, <b><?php echo htmlspecialchars($_SESSION["korisnicko_ime"]); ?></b>. Dobrodošli na sajt za recenzije filmova.</h1>
-    </div>
-    <p>
-        <a href="logout.php" class="btn btn-danger">Izlogujte se</a>
-    </p>
+	<div class="zaglavlje">
+        Nalog: <b><?php echo htmlspecialchars($_SESSION["korisnicko_ime"]); ?></b>
+		<div class="izloguj">
+			<p><a href="logout.php" class="btn btn-danger">Izlogujte se</a></p>
+		</div>
+	</div>
 </body>
 </html>

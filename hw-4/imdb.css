@@ -22,6 +22,7 @@ body{
 	font: 25px sans-serif;
 	padding-top: 13px;
 	padding-right: 13px;
+	margin-bottom: 15px;
 }
 
 .izloguj{
@@ -31,4 +32,34 @@ body{
 
 h2{
 	text-align: center;
+}
+
+.slike {
+			padding:5px;
+			margin-right: 10px;
+		}
+
+.lista{
+	margin-bottom: 20px;
+	font: 25px sans-serif;
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.pretraga{
+	width: 500px;
+	padding-top: 13px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.zanr{
+	padding-left: 27%;
+	color: white;
+}
+
+.zanr a{
+	color: white;
+	font: font: 20px sans-serif;
 }

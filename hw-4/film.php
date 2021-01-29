@@ -66,19 +66,31 @@ h2{
 	text-align: center;
 }
 
+h1{
+	text-align: center;
+	color: yellow;
+}
+
 .slike {
 	padding:5px;
 	margin-right: 10px;
 }
 
 .prikaz{
-	padding-top: 120px;
+	padding-top: 73px;
 	margin-bottom: 20px;
 	font: 15px sans-serif;
 	width: 900px;
 	margin-left: auto;
 	margin-right: auto;
 	color: white;
+}
+
+.vrati{
+	padding-top: 13px;
+	width: 150px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .pretraga{
@@ -101,12 +113,14 @@ h2{
 </head>
 <body>
 	<div class="zaglavlje">
-		Nalog:<b><?php echo htmlspecialchars($_SESSION["korisnicko_ime"]); ?></b>
+		Nalog:&nbsp;<b><?php echo htmlspecialchars($_SESSION["korisnicko_ime"]); ?></b>
 		<div class="izloguj">
 			<p><a href="logout.php" class="btn btn-danger">Izlogujte se</a></p>
 		</div>
 	</div>
-	<a href="imdb.php"> >> Vratite se na pretragu << </a>
+	<div class="vrati">
+		<a href="imdb.php"> <input type="submit" class="btn btn-primary" value=">> Vratite se na pretragu <<"></a>
+	</div>
 	<div class="prikaz">
 	<?php
 	
@@ -115,14 +129,14 @@ h2{
 		if($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
 				$str = "<br><img class=\"slike\" src=\"". $row['poster_path'] ."\" height=\"445\" width=\"300\" style=\"float:left\"/>" .					
-				"<br><br><span> ". $row['naslov']. " ( " .$row['godina'] ." ) </span></br></br>" .
+				"<br><br><h1> ". $row['naslov']. " ( " .$row['godina'] ." ) </h1></br></br>" .
 				"<span> ". $row['zanr'] ."  </span></br></br>" .
-				"<span> Dužina trajanja:". $row['trajanje'] ."  </span></br></br>" .
+				"<span> Dužina trajanja:&nbsp;&nbsp;". $row['trajanje'] ."  </span></br></br>" .
 				"<span> ". $row['opis'] ."  </span></br></br>" .
-				"<span> Scenario:". $row['scenarista'] ."  </span></br></br>" .
-				"<span> Režiser:". $row['reziser'] ."  </span></br></br>" .
-				"<span> Producentske kuće:". $row['prod_kuca'] ."  </span></br></br>" .
-				"<span> Glumci:". $row['glumci'] ."  </span></br></br>"
+				"<span> Scenaristi:&nbsp;&nbsp;". $row['scenarista'] ."  </span></br></br>" .
+				"<span> Režiser:&nbsp;&nbsp;". $row['reziser'] ."  </span></br></br>" .
+				"<span> Producentske kuće:&nbsp;&nbsp;". $row['prod_kuca'] ."  </span></br></br>" .
+				"<span> Glumci:&nbsp;&nbsp;". $row['glumci'] ."  </span></br></br>"
 				;
 			}
 			echo $str;

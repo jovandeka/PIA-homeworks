@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     if(empty($korisnicko_ime_err) && empty($lozinka_err)){
-        $sql = "SELECT id, korisnicko_ime, lozinka FROM korisnici WHERE korisnicko_ime = ?";
+        $sql = "SELECT id_korisnika, korisnicko_ime, lozinka FROM korisnici WHERE korisnicko_ime = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             mysqli_stmt_bind_param($stmt, "s", $param_korisnicko_ime);
@@ -49,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             session_start();
                             
                             $_SESSION["loggedin"] = true;
-                            $_SESSION["id"] = $id;
+                            $_SESSION["id_korisnika"] = $id;
                             $_SESSION["korisnicko_ime"] = $korisnicko_ime;                            
                             
                             header("location: imdb.php");
@@ -68,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 	
 	if(empty($email_err) && empty($lozinka_err)){
-        $sql = "SELECT id, korisnicko_ime, lozinka FROM korisnici WHERE email = ?";
+        $sql = "SELECT id_korisnika, korisnicko_ime, lozinka FROM korisnici WHERE email = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             mysqli_stmt_bind_param($stmt, "s", $param_email);
@@ -85,7 +85,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             session_start();
                             
                             $_SESSION["loggedin"] = true;
-                            $_SESSION["id"] = $id;
+                            $_SESSION["id_korisnika"] = $id;
                             $_SESSION["korisnicko_ime"] = $korisnicko_ime;                            
                             
                             header("location: imdb.php");

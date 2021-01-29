@@ -7,20 +7,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 
 require_once "config.php";
+
 $str = "";
 $q = "";
+$ocena = "";
+$err_ocena = "";
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
 	if(isset($_GET["q"])){
 		$q = $_GET["q"];
 	}
 }
-/*
-if($_SERVER["REQUEST_METHOD"] == "GET"){
-	if(isset($_GET["zanr"])) {
-		$zanr = $_GET["zanr"];
-	}
-}*/
 ?>
  
 <!DOCTYPE html>
@@ -68,7 +65,7 @@ h2{
 
 h1{
 	text-align: center;
-	color: yellow;
+	color: gold;
 }
 
 .slike {
@@ -77,10 +74,10 @@ h1{
 }
 
 .prikaz{
-	padding-top: 73px;
+	padding-top: 77px;
 	margin-bottom: 20px;
 	font: 15px sans-serif;
-	width: 900px;
+	width: 910px;
 	margin-left: auto;
 	margin-right: auto;
 	color: white;
@@ -98,6 +95,15 @@ h1{
 	padding-top: 13px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.ocena{
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
+	color: orange;
+	font: 20px sans-serif;
+	text-align: center;
 }
 
 .zanr{
@@ -119,7 +125,7 @@ h1{
 		</div>
 	</div>
 	<div class="vrati">
-		<a href="imdb.php"> <input type="submit" class="btn btn-primary" value=">> Vratite se na pretragu <<"></a>
+		<a href="imdb.php" class="btn btn-primary">>> Vratite se na pretragu <<</a>
 	</div>
 	<div class="prikaz">
 	<?php
@@ -144,7 +150,12 @@ h1{
 		
 		
 	?>
-
+	<div class="ocena">
+		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+			<label for="quantity">Ocenite film od 1 do 10:</label>
+			<input type="number" id="quantity" name="quantity" min="1" max="10" value="<?php echo $ocena; ?>" required>
+			<input type="submit" class="btn btn-primary" value="Oceni">
+		</form>
 	</div>
 </body>
 </html>

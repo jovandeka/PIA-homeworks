@@ -24,7 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty(trim($_POST["email"]))){
         $email_err = "Unesite email adresu.";
     } else{
-        $sql = "SELECT id FROM korisnici WHERE email = ?";
+        $sql = "SELECT id_korisnika FROM korisnici WHERE email = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             mysqli_stmt_bind_param($stmt, "s", $param_email);
@@ -51,7 +51,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty(trim($_POST["korisnicko_ime"]))){
         $korisnicko_ime_err = "Unesite korisničko ime.";
     } else{
-        $sql = "SELECT id FROM korisnici WHERE korisnicko_ime = ?";
+        $sql = "SELECT id_korisnika FROM korisnici WHERE korisnicko_ime = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             mysqli_stmt_bind_param($stmt, "s", $param_korisnicko_ime);

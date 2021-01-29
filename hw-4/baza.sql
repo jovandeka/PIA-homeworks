@@ -88,5 +88,65 @@ VALUES ("The Prestige",
  "slike/prestige.jpg",
  "2h 10min");
  
+INSERT INTO filmovi (naslov, opis, zanr, scenarista, reziser, prod_kuca, glumci, godina, poster_path, trajanje)
+VALUES ("The Shawshank Redemption",
+ "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+ "Drama",
+ "Stephen King, Frank Darabont (screenplay)",
+ "Frank Darabont",
+ "Castle Rock Entertainment (presents).",
+ "Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler, Clancy Brown, Gil Bellows, Mark Rolston, James Whitmore, Jeffrey DeMunn.",
+ 1994,
+ "slike/tsr.jpg",
+ "2h 22min");
+ 
+INSERT INTO filmovi (naslov, opis, zanr, scenarista, reziser, prod_kuca, glumci, godina, poster_path, trajanje)
+VALUES ("Interstellar",
+ "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+ "Adventure, Drama, Sci-Fi",
+ "Jonathan Nolan, Christopher Nolan",
+ "Christopher Nolan",
+ "Paramount Pictures (presents), Warner Bros. (presents), Legendary Entertainment (in association with), Syncopy (production), Lynda Obst Productions (production).",
+ "Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow, Timothée Chalamet, David Oyelowo, Collette Wolfe, Francis X. McCarthy, Bill Irwin.",
+ 2014,
+ "slike/interstellar.jpg",
+ "2h 49min");
+ 
+INSERT INTO filmovi (naslov, opis, zanr, scenarista, reziser, prod_kuca, glumci, godina, poster_path, trajanje)
+VALUES ("Memento",
+ "A man with short-term memory loss attempts to track down his wife's murderer.",
+ "Mystery, Thriller",
+ "Christopher Nolan (screenplay), Jonathan Nolan",
+ "Christopher Nolan",
+ "Newmarket Capital Group, Team Todd, I Remember Productions, Summit Entertainment.",
+ "Guy Pearce, Carrie-Anne Moss, Joe Pantoliano, Mark Boone Junior, Russ Fega, Jorja Fox, Stephen Tobolowsky, Harriet Sansom Harris.",
+ 2000,
+ "slike/memento.jpg",
+ "1h 53min");
+ 
+INSERT INTO filmovi (naslov, opis, zanr, scenarista, reziser, prod_kuca, glumci, godina, poster_path, trajanje)
+VALUES ("Léon",
+ "Mathilda, a 12-year-old girl, is reluctantly taken in by Léon, a professional assassin, after her family is murdered. An unusual relationship forms as she becomes his protégée and learns the assassin's trade..",
+ "Action, Crime, Drama",
+ "Luc Besson",
+ "Luc Besson",
+ "Gaumont (presents), Les Films du Dauphin, Columbia Pictures.",
+ "Jean Reno, Gary Oldman, Natalie Portman, Danny Aiello, Peter Appel, Willi One Blood, Don Creech.",
+ 1994,
+ "slike/leon.jpg",
+ "1h 50min");
+ 
 SELECT * FROM filmovi;
 DROP TABLE filmovi;
+
+CREATE TABLE ocene (
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_korisnika INT NOT NULL UNIQUE,
+    id_filma INT NOT NULL,
+    ocena INT NOT NULL,
+    FOREIGN KEY (id_korisnika) REFERENCES korisnici(id_korisnika),
+    FOREIGN KEY (id_filma) REFERENCES filmovi(id_filma)
+);
+
+SELECT * FROM ocene;
+DROP TABLE ocene;

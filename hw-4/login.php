@@ -121,7 +121,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 			<div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
                 <label>Email adresa:</label>
-                <input type="text" name="email" class="form-control" value="<?php echo $email; ?>">
+                <input type="email" name="email" class="form-control" value="<?php echo $email; ?>">
                 <span class="help-block"><b><?php echo $email_err; ?></b></span>
             </div>
             <div class="form-group <?php echo (!empty($korisnicko_ime_err)) ? 'has-error' : ''; ?>">

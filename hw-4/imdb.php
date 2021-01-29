@@ -86,7 +86,7 @@ h2{
 }
 
 .prikaz{
-	padding-top: 120px;
+	padding-top: 105px;
 	margin-bottom: 20px;
 	font: 15px sans-serif;
 	width: 900px;
@@ -108,7 +108,7 @@ h2{
 </head>
 <body>
 	<div class="zaglavlje">
-		Nalog:<b><?php echo htmlspecialchars($_SESSION["korisnicko_ime"]); ?></b>
+		Nalog:&nbsp;<b><?php echo htmlspecialchars($_SESSION["korisnicko_ime"]); ?></b>
 		<div class="izloguj">
 			<p><a href="logout.php" class="btn btn-danger">Izlogujte se</a></p>
 		</div>

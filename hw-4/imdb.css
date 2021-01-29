@@ -34,6 +34,11 @@ h2{
 	text-align: center;
 }
 
+h1{
+	text-align: center;
+	color: blue;
+}
+
 .slike {
 	padding:5px;
 	margin-right: 10px;
@@ -50,6 +55,23 @@ h2{
 .pretraga{
 	width: 500px;
 	padding-top: 13px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.prikaz{
+	padding-top: 105px;
+	margin-bottom: 20px;
+	font: 15px sans-serif;
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+}
+
+.vrati{
+	padding-top: 13px;
+	width: 150px;
 	margin-left: auto;
 	margin-right: auto;
 }

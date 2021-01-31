@@ -169,7 +169,7 @@ h1{
 			echo $str;
 		}
 		
-		$s = "SELECT avg(ocena) AS srednja, count(*) AS broj FROM ocene WHERE id_filma = '".$id_fil."'";
+		$s = "SELECT round(avg(ocena),1) AS srednja, count(*) AS broj FROM ocene WHERE id_filma = '".$id_fil."'";
 		$rez = $link->query($s);
 		if($rez->num_rows > 0) {
 			while($row = $rez->fetch_assoc()) {

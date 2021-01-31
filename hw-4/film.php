@@ -210,7 +210,7 @@ h1{
 					if(mysqli_stmt_execute($stmt)){
 						header("location: imdb.php");
 						} else{
-							echo "Već ste ocenili ovaj film.";
+							echo "Došlo je do greške!";
 						}
 					mysqli_stmt_close($stmt);
 				}

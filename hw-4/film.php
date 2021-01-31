@@ -180,22 +180,42 @@ h1{
 		
 		if($ocena != null)
 		{
-			$sql = "INSERT INTO ocene (id_korisnika, id_filma, ocena) VALUES (?, ?, ?)";
-			if($stmt = mysqli_prepare($link, $sql))
-			{
-				mysqli_stmt_bind_param($stmt, "sss", $param_id_korisnika, $param_id_filma, $param_ocena);
-				$param_id_korisnika = $id_kor;
-				$param_id_filma = $id_fil;
-				$param_ocena = $ocena;
-				
-				if(mysqli_stmt_execute($stmt)){
-					header("location: imdb.php");
-					} else{
-						echo "Već ste ocenili ovaj film.";
-					}
-				mysqli_stmt_close($stmt);
+			$upit = "SELECT * FROM ocene WHERE id_korisnika = '".$id_kor."'";
+			$rezultat = $link->query($upit);
+			if($rezultat->num_rows > 0){
+				$apdejt = "UPDATE ocene SET ocena = ? WHERE id_korisnika = '".$id_kor."' AND id_filma = '".$id_fil."'";
+				if($stmt = mysqli_prepare($link, $apdejt))
+				{
+					mysqli_stmt_bind_param($stmt, "s", $param_ocena);
+					$param_ocena = $ocena;
+					
+					if(mysqli_stmt_execute($stmt)){
+						header("location: imdb.php");
+						} else{
+							echo "Došlo je do greške!";
+						}
+					mysqli_stmt_close($stmt);
+				}
+				mysqli_close($link);
 			}
-			mysqli_close($link);
+			else{
+				$sql = "INSERT INTO ocene (id_korisnika, id_filma, ocena) VALUES (?, ?, ?)";
+				if($stmt = mysqli_prepare($link, $sql))
+				{
+					mysqli_stmt_bind_param($stmt, "sss", $param_id_korisnika, $param_id_filma, $param_ocena);
+					$param_id_korisnika = $id_kor;
+					$param_id_filma = $id_fil;
+					$param_ocena = $ocena;
+					
+					if(mysqli_stmt_execute($stmt)){
+						header("location: imdb.php");
+						} else{
+							echo "Već ste ocenili ovaj film.";
+						}
+					mysqli_stmt_close($stmt);
+				}
+				mysqli_close($link);
+			}
 		}
 	?>
 	</div>

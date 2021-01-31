@@ -10,13 +10,20 @@ require_once "config.php";
 
 $str = "";
 $q = "";
+$id_fil = "";
 $ocena = "";
-$err_ocena = "";
+$id_kor = "";
+
+$id_kor = $_SESSION["id_korisnika"];
 
 if($_SERVER["REQUEST_METHOD"] == "GET"){
 	if(isset($_GET["q"])){
 		$q = $_GET["q"];
 	}
+}
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+	$ocena = $_POST["ocena"];
 }
 ?>
  
@@ -26,6 +33,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     <meta charset="UTF-8">
     <title>IMDB</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+	<!--<link href="imdb.css" rel="stylesheet">-->
     <style>
 	body{
 	font: 14px sans-serif;
@@ -134,6 +142,7 @@ h1{
 		$result = $link->query($sql);
 		if($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
+				$id_fil = $row['id_filma'];
 				$str = "<br><img class=\"slike\" src=\"". $row['poster_path'] ."\" height=\"445\" width=\"300\" style=\"float:left\"/>" .					
 				"<br><br><h1> ". $row['naslov']. " ( " .$row['godina'] ." ) </h1></br></br>" .
 				"<span> ". $row['zanr'] ."  </span></br></br>" .
@@ -147,13 +156,30 @@ h1{
 			}
 			echo $str;
 		}
-		
-		
+		if($ocena != null)
+		{
+			echo $id_fil;
+			$sql = "INSERT INTO ocene (id_korisnika, id_filma, ocena) VALUES (?, ?, ?)";
+			if($stmt = mysqli_prepare($link, $sql))
+			{
+				mysqli_stmt_bind_param($stmt, "sss", $param_id_korisnika, $param_id_filma, $param_ocena);
+				$param_id_korisnika = $id_kor;
+				$param_id_filma = $id_fil;
+				$param_ocena = $ocena;
+				
+				if(mysqli_stmt_execute($stmt)){
+					header("location: film.php");
+					} else{
+						echo "Došlo je do greške! Pokušajte kasnije.";
+					}
+				mysqli_stmt_close($stmt);
+			}
+		}
 	?>
 	<div class="ocena">
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 			<label for="quantity">Ocenite film od 1 do 10:</label>
-			<input type="number" id="quantity" name="quantity" min="1" max="10" value="<?php echo $ocena; ?>" required>
+			<input type="number" id="quantity" name="ocena" min="1" max="10" value="<?php echo $ocena; ?>" required>
 			<input type="submit" class="btn btn-primary" value="Oceni">
 		</form>
 	</div>

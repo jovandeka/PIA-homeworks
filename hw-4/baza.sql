@@ -176,5 +176,5 @@ VALUES (1, 8, 9);
 INSERT INTO ocene (id_korisnika, id_filma, ocena)
 VALUES (1, 9, 8);
 
-SELECT * FROM ocene;
+SELECT * FROM ocene ORDER BY id_filma;
 DROP TABLE ocene;

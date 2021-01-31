@@ -62,8 +62,18 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
 	padding-left: 13px;
 }
 
+h3{
+	text-align: center;
+	color: gold;
+}
+
 h2{
 	text-align: center;
+}
+
+h1{
+	text-align: center;
+	color: gold;
 }
 
 .slike {
@@ -79,6 +89,23 @@ h2{
 	margin-right: auto;
 }
 
+.prikaz{
+	padding-top: 75px;
+	margin-bottom: 20px;
+	font: 15px sans-serif;
+	width: 910px;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+}
+
+.vrati{
+	padding-top: 13px;
+	width: 150px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .pretraga{
 	width: 500px;
 	padding-top: 13px;
@@ -86,14 +113,13 @@ h2{
 	margin-right: auto;
 }
 
-.prikaz{
-	padding-top: 105px;
-	margin-bottom: 20px;
-	font: 15px sans-serif;
-	width: 900px;
+.ocena{
 	margin-left: auto;
 	margin-right: auto;
-	color: white;
+	width: 800px;
+	color: orange;
+	font: 20px sans-serif;
+	text-align: center;
 }
 
 .zanr{

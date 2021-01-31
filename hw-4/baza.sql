@@ -141,12 +141,40 @@ DROP TABLE filmovi;
 
 CREATE TABLE ocene (
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    id_korisnika INT NOT NULL UNIQUE,
+    id_korisnika INT NOT NULL,
     id_filma INT NOT NULL,
     ocena INT NOT NULL,
     FOREIGN KEY (id_korisnika) REFERENCES korisnici(id_korisnika),
-    FOREIGN KEY (id_filma) REFERENCES filmovi(id_filma)
+    FOREIGN KEY (id_filma) REFERENCES filmovi(id_filma),
+    UNIQUE KEY (id_korisnika, id_filma)
 );
+
+INSERT INTO ocene (id_korisnika, id_filma, ocena)
+VALUES (1, 1, 9);
+
+INSERT INTO ocene (id_korisnika, id_filma, ocena)
+VALUES (1, 2, 10);
+
+INSERT INTO ocene (id_korisnika, id_filma, ocena)
+VALUES (1, 3, 10);
+
+INSERT INTO ocene (id_korisnika, id_filma, ocena)
+VALUES (1, 4, 9);
+
+INSERT INTO ocene (id_korisnika, id_filma, ocena)
+VALUES (1, 5, 9);
+
+INSERT INTO ocene (id_korisnika, id_filma, ocena)
+VALUES (1, 6, 10);
+
+INSERT INTO ocene (id_korisnika, id_filma, ocena)
+VALUES (1, 7, 9);
+
+INSERT INTO ocene (id_korisnika, id_filma, ocena)
+VALUES (1, 8, 9);
+
+INSERT INTO ocene (id_korisnika, id_filma, ocena)
+VALUES (1, 9, 8);
 
 SELECT * FROM ocene;
 DROP TABLE ocene;

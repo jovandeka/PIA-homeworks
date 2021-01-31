@@ -11,6 +11,9 @@ CREATE TABLE korisnici (
 INSERT INTO korisnici (ime, prezime, email, korisnicko_ime, lozinka, je_admin)
 VALUES ("Admin", "Bo", "bo@gmail.com", "admin", "sifra", true);
 
+INSERT INTO korisnici (ime, prezime, email, korisnicko_ime, lozinka, je_admin)
+VALUES ("Jovan", "Bogdanovic", "Jova@gmail.com", "jova", "12345", true);
+
 SELECT * FROM korisnici;
 DROP TABLE korisnici;
 
@@ -175,6 +178,33 @@ VALUES (1, 8, 9);
 
 INSERT INTO ocene (id_korisnika, id_filma, ocena)
 VALUES (1, 9, 8);
+
+INSERT INTO ocene (id_korisnika, id_filma, ocena)
+VALUES (2, 1, 8);
+
+INSERT INTO ocene (id_korisnika, id_filma, ocena)
+VALUES (2, 2, 9);
+
+INSERT INTO ocene (id_korisnika, id_filma, ocena)
+VALUES (2, 3, 10);
+
+INSERT INTO ocene (id_korisnika, id_filma, ocena)
+VALUES (2, 4, 8);
+
+INSERT INTO ocene (id_korisnika, id_filma, ocena)
+VALUES (2, 5, 8);
+
+INSERT INTO ocene (id_korisnika, id_filma, ocena)
+VALUES (2, 6, 10);
+
+INSERT INTO ocene (id_korisnika, id_filma, ocena)
+VALUES (2, 7, 10);
+
+INSERT INTO ocene (id_korisnika, id_filma, ocena)
+VALUES (2, 8, 8);
+
+INSERT INTO ocene (id_korisnika, id_filma, ocena)
+VALUES (2, 9, 7);
 
 SELECT * FROM ocene ORDER BY id_filma;
 DROP TABLE ocene;

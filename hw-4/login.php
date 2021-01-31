@@ -43,13 +43,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 mysqli_stmt_store_result($stmt);
                 
                 if(mysqli_stmt_num_rows($stmt) == 1){                    
-                    mysqli_stmt_bind_result($stmt, $id, $korisnicko_ime, $baza_lozinka);
+                    mysqli_stmt_bind_result($stmt, $id_korisnika, $korisnicko_ime, $baza_lozinka);
                     if(mysqli_stmt_fetch($stmt)){
                         if($lozinka == $baza_lozinka){
                             session_start();
                             
                             $_SESSION["loggedin"] = true;
-                            $_SESSION["id_korisnika"] = $id;
+                            $_SESSION["id_korisnika"] = $id_korisnika;
                             $_SESSION["korisnicko_ime"] = $korisnicko_ime;                            
                             
                             header("location: imdb.php");
@@ -79,13 +79,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 mysqli_stmt_store_result($stmt);
                 
                 if(mysqli_stmt_num_rows($stmt) == 1){                    
-                    mysqli_stmt_bind_result($stmt, $id, $korisnicko_ime, $baza_lozinka);
+                    mysqli_stmt_bind_result($stmt, $id_korisnika, $korisnicko_ime, $baza_lozinka);
                     if(mysqli_stmt_fetch($stmt)){
                         if($lozinka == $baza_lozinka){
                             session_start();
                             
                             $_SESSION["loggedin"] = true;
-                            $_SESSION["id_korisnika"] = $id;
+                            $_SESSION["id_korisnika"] = $id_korisnika;
                             $_SESSION["korisnicko_ime"] = $korisnicko_ime;                            
                             
                             header("location: imdb.php");

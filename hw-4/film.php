@@ -9,6 +9,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 require_once "config.php";
 
 $str = "";
+$avg = "";
 $q = "";
 $id_fil = "";
 $ocena = "";
@@ -67,6 +68,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	padding-left: 13px;
 }
 
+h3{
+	text-align: center;
+	color: gold;
+}
+
 h2{
 	text-align: center;
 }
@@ -81,8 +87,16 @@ h1{
 	margin-right: 10px;
 }
 
+.lista{
+	margin-bottom: 20px;
+	font: 25px sans-serif;
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .prikaz{
-	padding-top: 77px;
+	padding-top: 75px;
 	margin-bottom: 20px;
 	font: 15px sans-serif;
 	width: 910px;
@@ -137,7 +151,6 @@ h1{
 	</div>
 	<div class="prikaz">
 	<?php
-	
 		$sql = "SELECT * FROM filmovi WHERE naslov = '".$q."'";
 		$result = $link->query($sql);
 		if($result->num_rows > 0) {
@@ -150,11 +163,21 @@ h1{
 				"<span> Scenaristi:&nbsp;&nbsp;". $row['scenarista'] ."  </span></br></br>" .
 				"<span> Režiser:&nbsp;&nbsp;". $row['reziser'] ."  </span></br></br>" .
 				"<span> Producentske kuće:&nbsp;&nbsp;". $row['prod_kuca'] ."  </span></br></br>" .
-				"<span> Glumci:&nbsp;&nbsp;". $row['glumci'] ."  </span></br></br>";
+				"<span> Glumci:&nbsp;&nbsp;". $row['glumci'] ."  </span></br>";
 				$id_fil = $row['id_filma'];
 			}
 			echo $str;
 		}
+		
+		$s = "SELECT avg(ocena) AS srednja, count(*) AS broj FROM ocene WHERE id_filma = '".$id_fil."'";
+		$rez = $link->query($s);
+		if($rez->num_rows > 0) {
+			while($row = $rez->fetch_assoc()) {
+				$avg = "<h3>Srednja ocena filma: ".$row['srednja']."&nbsp;&nbsp;&nbsp; Broj ocena filma: ".$row['broj']."</h3>";
+			}
+			echo $avg;
+		}
+		
 		if($ocena != null)
 		{
 			$sql = "INSERT INTO ocene (id_korisnika, id_filma, ocena) VALUES (?, ?, ?)";
@@ -168,7 +191,7 @@ h1{
 				if(mysqli_stmt_execute($stmt)){
 					header("location: imdb.php");
 					} else{
-						echo "Došlo je do greške! Pokušajte kasnije.";
+						echo "Već ste ocenili ovaj film.";
 					}
 				mysqli_stmt_close($stmt);
 			}

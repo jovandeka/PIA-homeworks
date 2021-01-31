@@ -9,7 +9,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 require_once "config.php";
 $str = "";
 $q = "";
-$id_fil = "";
 $zanr = "false";
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){

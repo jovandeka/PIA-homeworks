@@ -9,6 +9,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 require_once "config.php";
 $str = "";
 $q = "";
+$id_fil = "";
 $zanr = "false";
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -28,6 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     <meta charset="UTF-8">
     <title>IMDB</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+	<!--<link href="imdb.css" rel="stylesheet">-->
     <style>
 	body{
 	font: 14px sans-serif;
